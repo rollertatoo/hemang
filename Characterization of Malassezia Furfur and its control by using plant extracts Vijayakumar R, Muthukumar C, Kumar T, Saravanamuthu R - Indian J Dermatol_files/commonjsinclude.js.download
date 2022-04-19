@@ -1,0 +1,331 @@
+/*code added by deepak singh on 27/09/2010 to validate member login in subscriber login and memalerts.asp page*/
+/*Starts here*/
+function chkPForm()
+		{
+		
+		if(document.frmalert.toc.checked==false)
+		{
+		alert('Select alert to activate or deactivate');
+		document.frmalert.toc.focus();
+		return false;
+		}
+		}
+		
+function chkPPForm()
+		{
+		
+		if(document.frmpass.old_pass.value=='')
+		{
+		alert('Enter old password');
+		document.frmpass.old_pass.focus();
+		return false;
+		}
+		if(document.frmpass.new_pass.value=='')
+		{
+		alert('Enter new password');
+		document.frmpass.new_pass.focus();
+		return false;
+		}
+		
+		}
+function memcheckForm()
+		{
+		
+		if(document.frmMemlogin.mem_user.value=='')
+		{
+		alert('Enter user name');
+		document.frmMemlogin.mem_user.focus();
+		return false;
+		}
+		if(document.frmMemlogin.mem_pass.value=='')
+		{
+		alert('Enter password');
+		document.frmMemlogin.mem_pass.focus();
+		return false;
+		}
+		
+		}
+
+/*Ends here*/
+function popupWindowPD()
+{
+   var width,height;
+   width=350;
+   height=280;
+   winStats='toolbar=no,location=no,directories=no,menubar=no,scrollbars=0';
+    winStats+=',width='+width+',height='+height;
+   if (navigator.appName.indexOf("Microsoft")>=0) 
+   {
+      winStats+=',left=5,top=50';
+   }
+   else
+   {
+      winStats+=',screenX=5,screenY=50';
+   }
+	newwindow=window.open("re_send.asp","",winStats);
+	
+}
+function checkloginform()
+{
+	if (document.frmsublogin.user.value=="")
+	{
+			alert("Enter user ID");
+			document.frmsublogin.user.focus();
+			return false;
+	}
+	if (document.frmsublogin.password.value=="")
+	{
+			alert("Enter Password");
+			document.frmsublogin.password.focus();
+			return false;
+	}
+return true
+}
+
+function selectCntryPD()
+{
+	for( x=0;x<document.form1.country.length;x++)
+    {
+    	if( document.form1.country[x].value == document.form1.cntry.value)
+    	{
+    		document.form1.country[x].selected = true;
+    		break;
+    	}
+    	
+    }
+}
+function forgotpass()
+{
+  winStats='toolbar=no,location=no,directories=no,menubar=no,scrollbars=1';
+   winStats+=',width=550,height=500';
+   if (navigator.appName.indexOf("Microsoft")>=0) 
+   {
+      winStats+=',left=10,top=25';
+    }
+    else
+    {
+      winStats+=',screenX=10,screenY=25';
+    }
+	newwindow=window.open("forgotpasswordas.asp","",winStats);
+	
+}	
+function forgotpassm()
+{
+  winStats='toolbar=no,location=no,directories=no,menubar=no,scrollbars=1';
+   winStats+=',width=550,height=500';
+   if (navigator.appName.indexOf("Microsoft")>=0) 
+   {
+      winStats+=',left=10,top=25';
+    }
+    else
+    {
+      winStats+=',screenX=10,screenY=25';
+    }
+	newwindow=window.open("forgotpasswordm.asp","",winStats);
+	
+}	
+
+function checkFormPD()
+{
+	var fld_len;
+
+	fld_len = document.form1.passwd.value ;
+	if 	(fld_len.length<8)
+		{
+			alert("Password should be minimum 8 characters !");
+			document.form1.passwd.focus()
+			return false;
+	
+		} 
+		
+	if (document.form1.passwd.value == "")
+		{
+			alert("Please enter Password !");
+			document.form1.passwd.focus()
+			return false;
+		}
+	if (document.form1.passwd.value != document.form1.rpasswd.value)
+		{
+			alert("Password does not match !");
+			document.form1.rpasswd.focus();
+			return false;
+		}
+	if (document.form1.email.value == "")
+		{
+			alert("Please enter your email address !");
+			document.form1.email.focus();
+			return false;
+		}
+	else
+		{	
+			if(document.form1.email.value.indexOf('@')==-1)
+			{
+				alert("Invalid email address !");
+				document.form1.email.focus();
+				return false;
+			}
+			else if(document.form1.email.value.indexOf('.')==-1)
+			{
+				alert("Invalid email address !");
+				document.form1.email.focus();
+				return false;
+			}
+		}
+	if (document.form1.fname.value == "")
+		{
+			alert("Please enter your first Name !");
+			document.form1.fname.focus();
+			return false;
+		}
+	if (document.form1.lname.value == "")
+		{
+			alert("Please enter your Last Name !");
+			document.form1.lname.focus();
+			return false;
+		}
+	if (document.form1.address.value == "")
+		{
+			alert("Please enter your address !");
+			document.form1.address.focus();
+			return false;
+		}
+	if (document.form1.city.value == "")
+		{
+			alert("Please enter your City Name !");
+			document.form1.city.focus();
+			return false;
+		}
+	if (document.form1.zip.value == "")
+		{
+			alert("Please enter your Zip code !");
+			document.form1.zip.focus();
+			return false;
+		}
+	if (document.form1.country.value == "X")
+		{
+			alert("Please select your Country Name !");
+			document.form1.country.focus();
+			return false;
+		}
+	
+	return chkForm();
+		
+}
+
+function checkForm()
+{
+	var fld_len;
+	
+	if (document.form1.title.value == 'X')
+	{
+		alert("Plase select title");
+		document.form1.title.focus();
+		return false;
+	}		
+		
+	if (trimstr(document.form1.fname.value )== "")
+		{
+			alert("Please enter your first Name !");
+			document.form1.fname.focus();
+			return false;
+		}
+	if (trimstr(document.form1.lname.value) == "")
+		{
+			alert("Please enter your Last Name !");
+			document.form1.lname.focus();
+			return false;
+		}
+	if (trimstr(document.form1.email.value) == '')
+		{
+				alert ("Please enter your email address") ;
+				document.form1.email.focus();
+				return false;
+				}
+		else if (!check_email(document.form1.email.value))
+		{
+			alert("invalid email");
+			return false;
+		}
+	
+	if (trimstr(document.form1.email.value) != trimstr(document.form1.vemail.value))
+		{
+			alert("Email does not match !");
+			document.form1.vemail.focus();
+			return false;
+		}		
+	if (trimstr(document.form1.sw.value) == '')
+		{
+			alert("Please enter the secret word !");
+			document.form1.sw.focus();
+			return false;
+		}
+	if (document.form1.sw.value.length <= 3)
+		{
+			alert("There are four characherts in secret word  !");
+			document.form1.sw.focus();
+			return false;
+		}
+		
+	/*if (document.form1.address.value == "")
+		{
+			alert("Please enter your address !");
+			document.form1.address.focus();
+			return false;
+		}
+	if (document.form1.city.value == "")
+		{
+			alert("Please enter your City Name !");
+			document.form1.city.focus();
+			return false;
+		}
+	if (document.form1.zip.value == "")
+		{
+			alert("Please enter your Zip code !");
+			document.form1.zip.focus();
+			return false;
+		}
+	if (document.form1.country.value == "X")
+		{
+			alert("Please select your Country Name !");
+			document.form1.country.focus();
+			return false;
+		}*/
+	
+	return true;		
+		
+}
+function check_email(e)
+ {
+	ok = "1234567890qwertyuiop[]asdfghjklzxcvbnm.@-_QWERTYUIOPASDFGHJKLZXCVBNM";
+	for(i=0; i < e.length ;i++)
+	{
+		if(ok.indexOf(e.charAt(i))<0)
+			{ return (false);}	
+	} 
+
+	re = /(@.*@)|(\.\.)|(^\.)|(^@)|(@$)|(\.$)|(@\.)/;
+	re_two = /^.+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	if (!e.match(re) && e.match(re_two)) 
+	{
+		return (-1);		
+	} 
+}	
+
+function popupWindow()
+{
+   var width,height;
+   width=450;
+   height=280;
+   winStats='toolbar=no,location=no,directories=no,menubar=no,scrollbars=0';
+    winStats+=',width='+width+',height='+height;
+   if (navigator.appName.indexOf("Microsoft")>=0) 
+   {
+      winStats+=',left=5,top=50';
+   }
+   else
+   {
+      winStats+=',screenX=5,screenY=50';
+   }
+	newwindow=window.open("re_send.asp","",winStats);
+	
+}

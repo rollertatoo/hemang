@@ -1,0 +1,46 @@
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#E4E4E4",
+      "text": "#6A7271",
+	  "font-size": "10px !important"
+    },
+    "button": {
+      "background": "#E63036",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "classic",
+  "content": {
+    "message": "<span class='desktop-text'> </span> <span class='mobile-text'>This website uses cookies. By continuing to use this website you are giving consent to cookies being used. For information on cookies and how you can disable them visit our</span><a href='javascript:void(0)' class='bar-cls-btn' ><i class='fa fa-close'></i></a>",
+    "dismiss": "AGREE &amp; PROCEED",
+    "link": "Privacy and Cookie Policy.",
+    "href": "https://www.medknow.com/wkgdprpolicies.asp"
+  },
+  onPopupOpen: function() {
+	   jQuery('body #sayhello .footer-section').css('padding-bottom','50px'); 
+	   jQuery(".bar-cls-btn").click(function(e){
+		e.preventDefault();
+        jQuery(".cc-window").fadeOut(400);
+		jQuery('body #sayhello .footer-section').css('padding-bottom','0px');
+	  jQuery('.notification-sec .alert-icon,.alert-popup .icon-toggle').css('bottom','25px');
+	  jQuery('.alert-popup .notification-col').css('bottom','80px');
+    });
+	   if(jQuery(window).width() <= 460 && jQuery(window).width() > 320) {
+	   		jQuery('.notification-sec .alert-icon,.alert-popup .icon-toggle').css('bottom','170px');
+			jQuery('.alert-popup .notification-col').css('bottom','230px');
+		} else if(jQuery(window).width() <= 320 ) {
+	   		jQuery('.notification-sec .alert-icon,.alert-popup .icon-toggle').css('bottom','170px'); 
+	   } else {
+	   		jQuery('.notification-sec .alert-icon,.alert-popup .icon-toggle').css('bottom','70px');
+			jQuery('.alert-popup .notification-col').css('bottom','125px');
+		}
+	   
+	  },
+  onPopupClose: function() {
+	  jQuery('body #sayhello .footer-section').css('padding-bottom','0px');
+	  jQuery('.notification-sec .alert-icon,.alert-popup .icon-toggle').css('bottom','25px');
+	  jQuery('.alert-popup .notification-col').css('bottom','80px'); 
+	  }
+})});

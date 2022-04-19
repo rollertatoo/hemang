@@ -1,0 +1,946 @@
+a
+{
+	TEXT-DECORATION:none;
+	font-size: 12px;
+	font-family: Verdana,Arial,  sans-serif;
+	color:#110090;
+	font-weight:normal;
+
+}
+
+
+a:Hover
+{
+
+	color:#110090;	
+	TEXT-DECORATION:underline;
+}
+a:Visited
+{
+	color:#110090;	
+	
+}
+
+
+.topmenu
+{
+	font-family: Verdana,Arial, sans-serif;
+	font-size:12px;
+	color:#FFFFFF;
+	font-weight:bold;
+
+}
+.topmenu a:link
+{
+	color: #000000;
+	font-family: Verdana,Arial,  sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.topmenu a:visited
+{
+	color: #000000;
+	font-family: Verdana,Arial,  sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.topmenu a:Hover
+{
+	color: #FFFFFF;
+	font-family: Verdana,Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.button
+{
+	background-color: #F6FAF6; 
+	color: #000000; 
+	border: 1px solid #000000;
+	font-family: Verdana,Arial,  sans-serif;
+	font-size:11px;
+	cursor:pointer;
+	height:20px;
+	font-weight:bold;
+}
+
+.dropDown
+{
+	background-color: #F5F5F5; 
+	font-size: 9pt;
+	font-family: Verdana, Arial,  sans-serif;
+
+}
+
+.dbody
+{
+	margin-left:10px;
+	margin-top:5px;
+	font-family:Verdana, Arial, sans-serif;
+	font-size:12px;	
+    background:url(https://www.e-ijd.org/images/dsg2.gif) repeat;
+}
+
+.topBand
+{
+	color: #000000;
+	font-family: Verdana, Arial,  sans-serif;
+	font-size:13px;
+	background-color:#6A6562; 
+}
+
+.topBand a:link
+{
+	color: #000000;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.topBand a:visited
+{
+	color: #000000;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.topBand a:Hover
+{
+	color: #FFFFFF;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.logo
+{
+	
+	font-family:  Arial, Verdana,  sans-serif;
+	font-size:50px;
+	color:#FFFFFF;
+	
+
+}
+
+
+.bottomTAble
+{
+
+	background-color:#E8E8E8;
+	font-family: Verdana,Arial,  sans-serif;
+	font-size:10px;
+	color:#000000;
+
+}
+
+.FooterTAble
+{
+
+	font-family:Verdana, Arial, sans-serif;
+	font-size:12px;
+	color:#FFFFFF;
+	background-color: #FFFFFF; 
+
+}
+
+
+
+.leftNav
+{
+	
+	font-family:  Verdana, Arial, sans-serif;
+	font-size:11px;
+	color:#888888;
+	background-color:#FFFFFF;
+
+
+
+	
+}
+.pageSub
+{
+
+	font-family: Verdana , Arial,  sans-serif;
+	font-size:17px;
+ 	color:#943A38;
+	font-weight:bold;
+	background-color:#FFFFFF;
+	border-bottom:1px solid #179160;
+
+
+}
+
+
+.inhd
+{
+
+	font-family: verdana,Arial ,  sans-serif;
+	font-size:14px;
+	font-weight:bold;
+ 	color:#FFFFFF;
+	background-color:#6A6562; 
+
+
+}
+
+
+
+
+.leftnavcell
+{
+   background-color:#F1E1A3;
+	color:#888888;
+
+	font-family: Verdana, Arial, sans-serif;
+	font-size:12px;
+
+
+	border-bottom:1px solid #F6FAF6; 
+
+}	
+
+.leftnavcellover
+{
+	font-family:  Verdana, Arial, sans-serif;	
+	background-color:#179160;
+	color:#888888;
+	font-size:12px;
+	border-bottom:1px solid #DADADA;
+	background:url(https://www.e-ijd.org/images/dsg1.gif) repeat;
+}
+
+.leftnavcellover a:hover
+{
+	text-decoration:none;
+}
+
+.navCell
+{
+	border: 1px solid #AAC49E ;
+	background-color:#8BB4CF;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:12px;
+	border-left-style: solid; border-right-style: solid; 
+
+}
+
+
+.hashLinksTable
+{
+	border: 0px solid ;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:10PX;
+	font-weight:bold
+
+}
+
+.IssueVolume
+{
+	font-size:10PT;	
+	font-family: Verdana, Arial, sans-serif;
+	color:#1f1f3f;
+}
+
+.insideLine
+{
+	background-color:#394780;
+}
+
+
+.articleType
+{
+	font-size:14PX;	
+	font-family: Verdana, Arial, sans-serif;
+	color:#1f1f3f;
+}
+
+
+.articleTitle
+{
+	font-size:13px;	
+	font-weight:bold;
+	font-family: Verdana, Arial, sans-serif;
+	color:#000000; 
+	line-height:110%;
+}
+
+.articleAuthor
+{
+	font-size:12PX;	
+	font-family:  Verdana, Arial, sans-serif;
+	font-weight:bold;
+	color:#000000;
+
+}
+
+.sAuthor
+{
+	font-size:11px;	
+	font-family: Verdana, Arial,  sans-serif;
+	color:#1f1f3f;
+	line-height:125%;
+}
+
+
+.CorrsAdd
+{
+	font-size:11px;	
+	font-family: Verdana, Arial, sans-serif;
+	color:#1f1f3f;
+	line-height:125%;
+
+}
+
+.AuthorAff
+{
+	font-size:11px;	
+	font-family:Verdana, Arial, sans-serif;
+	color:#1f1f1f;
+}
+
+
+.body
+{
+
+	font-size:13px;
+	font-family:Verdana, Arial, sans-serif;
+	color:#000000;
+	line-height: 130%;
+	background-color:#FFFFFF;
+}
+.about
+{
+
+	font-size:9pt;
+	font-family:Verdana, Arial, sans-serif;
+	color:#000000;
+	line-height: 50%;
+
+}
+.PrePublication
+{
+	border: 1px solid #A6ADC4;
+	background-color:#E1E3ED;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:11PX;
+	color:#464646;
+
+}
+.sitethis
+{
+	border: 1px solid #A6ADC4;
+	background-color:#E1F3EF;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:11Px;
+	line-height:135%;
+
+}
+
+.splnote
+{
+	border: 1px solid #A6ADC4;
+	background-color:#E1F3EF;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:11Px;
+	line-height:135%;
+	color:#000000;
+
+}
+
+.topBand1
+{
+	
+	font-size: 11px;
+	font-family: Verdana, Arial, sans-serif;
+	color:#110090;
+	background-color:#F6FAF6;
+	font-weight:bold;
+}
+.topBand1 a:LINK
+{
+	
+	font-size: 11px;
+	font-family: Verdana, Arial, sans-serif;
+	color:#110090;
+	font-weight:bold;
+	text-decoration:none;
+}
+.topBand1 a:VISITED
+{
+	
+	font-size: 11px;
+	font-family: Verdana, Arial, sans-serif;
+	color:#110090;
+	font-weight:bold;
+	text-decoration:none;
+}
+.topBand1 a:hover
+{
+	
+	font-size: 11px;
+	font-family: Verdana, Arial, sans-serif;
+	color:#110090;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.topBand1MO
+{
+	
+	font-size: 12px;
+	font-weight:bold;
+	font-family: Verdana, Arial, sans-serif;
+	color:#FFFFFF;
+	background:url(https://www.e-ijd.org/images/dsg1.jpg) repeat;
+}
+.topBand1MO A:VISITED
+{
+	color:#000000;
+	text-decoration:none;
+	font-weight:bold;
+}
+.topBand1MO A:LINK
+{
+	color:#000000;
+	text-decoration:none;
+	font-weight:bold;
+}
+.topBand1MO A:Hover
+{
+	color:#000000;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.buttonCell
+{
+	background-color:#179160;
+}
+
+.buttonCell a:link
+{
+	color: #FFFFFf;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.buttonCell a:visited
+{
+	color: #FFFFFF;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.buttonCell a:Hover
+{
+	color: #FFFFFF;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.nav
+{
+	
+	font-size: 11px;
+	font-weight:bold;
+	font-family: Verdana, Arial, sans-serif;
+	color:#943A38;
+	background-color:#F6FAF6;
+	border: 1px solid #000000;
+}
+.nav a:link
+{
+	color:#000000;
+			text-decoration:none;
+}
+.nav a:visited
+{
+	color:#000000;
+			text-decoration:none;
+}
+.nav a:hover
+{
+	color:#000000;
+			text-decoration:none;
+
+}
+
+
+.navover
+{
+	
+	font-size: 11px;
+	font-weight:bold;
+	font-family: Verdana, Arial, sans-serif;
+	color:#943A38;
+	background-color:#FFFFFF;
+	border: 1px solid #179160;
+}
+.navover a:link
+{
+	color:#000000;
+		text-decoration:none;
+}
+.navover a:visited
+{
+	color:#000000;
+		text-decoration:none;
+}
+.navover a:hover
+{
+	color:#000000;
+	text-decoration:none;
+}
+
+
+.topTable
+{
+	font-size: 12px;
+	font-family: Verdana, Arial, sans-serif;
+	background-color: #FFFFFF;
+	text-decoration:none;
+}
+
+
+.jrnl
+{
+	font-size: 11px;
+	font-weight:normal;
+	font-family: Verdana,Arial,  sans-serif;
+	background-color: #FFFFFF;
+	color:#000000;
+	text-decoration:none;
+}
+
+.topBand2
+{
+	font-size: 12px;
+	font-family: Verdana, Arial, sans-serif;
+	background-color: #FFFFFF; 
+	COLOR: #000000;
+	text-decoration:none
+	
+}
+
+
+.Highlight
+{
+	font-family:Verdana, Arial, sans-serif;
+	font-size:10pt;
+	font-weight:Bold;
+	color:#190C74;
+	line-height:115%;
+}
+.HighlightArticleTitle
+{
+	font-family: Verdana, Arial, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#110090;
+}
+
+.tocAT
+{
+	font-family: Verdana, Arial, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#943A38;
+
+}
+
+.tochead
+{
+	font-family:Verdana, Arial, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#943A38;
+	border-top:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+}
+
+.line
+{
+	background-color:#943A38;
+}
+
+.HighlightVol
+{
+	font-family: Verdana,Arial, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#444444;
+	background-color:#F1E1A3;
+}
+
+
+.HighlightAbstract
+{
+	font-family: Verdana, Arial, sans-serif;
+	font-size:10pt;
+	color:#1B1818;
+}
+.textBox
+{
+	font-size: 9pt;
+	font-family: Verdana, Arial, sans-serif;
+	border: 1px solid #F1E1A3;
+}
+
+.articlepage
+{
+	border-color: #FFFFFF;
+
+
+	padding-top:10PX ;
+	padding-left:10PX ;
+	padding-right:5PX ;
+	line-height:135%;
+	font-size:13px;
+	font-family: Verdana, Arial, sans-serif;
+
+	BACKGROUND: url(https://www.e-ijd.org/images/ap.gif) repeat-Y right;
+	color:#000000;
+
+
+}
+
+.toctab
+{
+	border-color: #FFFFFF;
+	border-right:1px dotted #943A38;
+	padding-top:2PX ;
+	padding-left:15PX ;
+	padding-right:5PX ;
+	line-height:125%;
+	font-size:12px;
+	font-family: Verdana, Arial, sans-serif;
+	background-color:white;
+
+	color:#000000;
+}
+
+.parameter
+{
+	font-size:12px;
+	font-family: Verdana, Arial, sans-serif;
+	color:#943A38;
+}
+.parameterhead
+{
+	font-size:12px;
+	font-family:Verdana, Arial, sans-serif;
+	font-weight:bold;
+	color:#943A38;
+}
+.parametertext
+{
+	font-size:12px;
+	font-family: Verdana, Arial, sans-serif;
+	font-weight:bold;
+	color:#943A38;
+}
+.pageHead
+{
+	font-size:18px;
+	font-family: Verdana, Arial, sans-serif;
+	font-weight:bold;
+	color:#943A38;
+	padding-right:20px;
+}
+
+.other
+{
+	font-size:12px;
+	font-family: Verdana, Arial, sans-serif;
+	color:#1f1f3f;
+
+
+
+}
+
+.sTitle
+{
+	font-size:18px;
+	font-family: Verdana, Arial, sans-serif;
+	color:	#110090;
+	line-height:110%;
+}
+
+.ref
+{
+	font-size:11px;
+	font-family: Verdana, Arial, sans-serif;
+	color:	#110090;
+}
+
+.empty
+{
+	background-color:white;
+	color:#943A38;
+	font-family: Verdana, Arial, sans-serif;
+	font-size:10px;
+
+}
+
+.footer 
+{
+	background-color:#FFFFFF;
+	line-height:150%;
+	color:#000000;
+
+}
+
+
+.menu
+{
+	color:#000000;
+	font-family: Verdana, Arial,  sans-serif;
+	font-size:11px;
+	font-weight:normal;
+	
+
+}
+
+.sj
+{
+	font-size:11px;
+	font-family:Verdana, Arial, sans-serif;
+	color: #943A38;
+	background-color:#FFFFFF;
+	font-weight:bold;
+
+
+
+}
+.Footertab
+{
+
+	font-family: Verdana, Arial, sans-serif;
+	font-size:10px;
+	color:#A1A1A1;
+	background-color:#FFFFFF
+
+}
+
+
+.foot
+{
+	font-family:Verdana, Arial, sans-serif;
+	font-size:10px;	
+	color:#000000;
+
+}
+
+.medknow
+{
+
+	font-family: Verdana, Arial, sans-serif;
+	font-size:10px;
+	color:#A1A1A1;
+}
+.jname
+{
+	font-family:	Verdana, Arial, sans-serif;
+	font-size:18px;
+	color:#888888;
+
+}
+.jasso
+{
+	font-family:	Verdana, Arial, sans-serif;
+	font-size:11px;
+	color:#888888;
+	font-weight:bold;
+}
+
+.rtmc
+{
+	font-size: 11px;
+	font-family:Verdana, Arial, sans-serif;
+	color:#FFFFFF;
+	font-weight:normal;
+	background-color:#ad1629;
+	border-right: 1px solid #FFFFFF;
+	
+}
+.adlink
+{
+	font-size: 10px;
+	font-family:Verdana, Arial, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	
+}
+.toc
+{
+	font-size: 11px;
+	font-family:Verdana, Arial, sans-serif;
+	color:#110090;
+	font-weight:normal;
+	
+}
+
+
+.leftnavcelltop
+{
+	color:#000000;
+	background-color: #179160;
+	border-bottom:1px solid #ffffff;
+    
+}
+.leftcell
+{
+    background-color:#FFFFFF; /*F1E1A3;*/
+	
+}
+.leftref
+{
+	font-family: Verdana, Arial, sans-serif;
+	font-size:14px;
+	color:#000000;
+}	
+.vol
+{
+	font-family: Verdana, Arial, sans-serif;
+	font-size:11px;
+	color:#943A38;
+}	
+
+.headrow
+{
+	
+	font-size: 12px;
+	font-weight:bold;
+	font-family: Verdana, Arial, sans-serif;
+	color:#FFFFFF;
+	background-color:#943A38;
+}
+
+.spl
+{
+	font-family:Verdana, Arial, sans-serif;
+	font-size:12px;
+
+	FONT-STYLE:  ITALIC;
+	color:#000000;
+	border: 3px dotted #FFFFFF;
+	background-color:#CDD8BA;
+	margin-left:2px;
+	margin-right:2px;
+}
+
+
+.brv
+{
+	border-left:1px dotted #cccccc;
+}
+
+.ftbl
+{
+	
+
+	BACKGROUND: url(https://www.e-ijd.org/images/ft.gif) repeat left center;
+
+	
+}
+
+.mimg
+{
+BACKGROUND: url(https://www.e-ijd.org/images/mnb.gif) repeat left center;
+
+}
+.w3cc
+{
+	background-color:#179160;
+	border:1px solid #000000;
+}
+.w3cc a:link
+{
+	color:#FFFFFF;
+	font-size:9px;
+}
+.w3cc a:visited
+{
+	color:#FFFFFF;
+	font-size:9px;
+}
+.w3cc a:hover
+{
+	color:#FFFFFF;
+	font-size:9px;
+}
+.dcc
+{
+	background-color:#F6FAF6;
+		border: 1px solid #000000;	
+}
+.dcc a:link
+{
+	color:#000000;
+	font-size:9px;
+
+}
+.whch
+{
+	background-color:#179160;
+	border:1px solid #000000;
+}
+.whch a:link
+{
+	color:#FFFFFF;
+	font-size:9px;
+}
+.whch a:visited
+{
+	color:#FFFFFF;
+	font-size:9px;
+}
+.whch a:hover
+{
+	color:#FFFFFF;
+	font-size:9px;
+}
+.jh
+{
+background-color:#179160;
+color:#FFFFFF;
+font-family:Arial, Verdana, Helvetica, Sans-Serif;
+}
+
+.hm
+{
+font-family: Arial, verdana, sans-serif, helvetica;
+font-size:12px;
+text-align:justify;
+}
+
+.annStyle{
+background-color:#F1E1A3;
+    display: block;
+    float: right;
+    height: 20px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    margin-top: 1px;
+    width: 500px;color:#000;
+	padding-top:5px;
+	border: solid 1px #f79a50;
+  padding: 5px;
+  background-clip: content-box; /* support: IE9+ */
+  background-color: #ccc;
+  padding: 5px;
+  background-clip: content-box; /* support: IE9+ */
+  background-color: #F1E1A3;
+  line-height:20px;
+}
+
+.adStyle{display: block;
+    margin: 10px auto;
+    text-align: center;
+    width: 728px;
+}
+
+.adStyle span{
+margin: 5px 0;
+    display: block;
+    color: #b3b1b1;
+    font-size: 10px;
+}

@@ -1,0 +1,445 @@
+
+var enableCache = false;
+var jsCache = new Array();
+var AjaxObjects = new Array();
+
+/*Functions copied from subscribersignup.asp*/
+function showe(obj)
+{
+	document.form1.user.value=obj.value;
+}
+function checkForm()
+{
+	var fld_len;
+	if (document.form1.user.value == "")
+		{
+			alert("Please enter your Login Name !");
+			document.form1.user.focus();
+			return false;
+		}
+	
+
+	fld_len = document.form1.passwd.value ;
+	if 	(fld_len.length<8)
+		{
+			alert("Password should be minimum 8 characters !");
+			document.form1.passwd.focus()
+			return false;
+	
+		} 
+		
+	if (document.form1.passwd.value == "")
+		{
+			alert("Please enter Password !");
+			document.form1.passwd.focus()
+			return false;
+		}
+	if (document.form1.passwd.value != document.form1.rpasswd.value)
+		{
+			alert("Password does not match !");
+			document.form1.rpasswd.focus();
+			return false;
+		}
+	if (document.form1.email.value == '')
+		{
+				alert ("Please enter your email address") ;
+				document.form1.email.focus();
+				return false;
+				}
+		else if (!check_email(document.form1.email.value))
+		{
+			alert("invalid email");
+			return false;
+		}
+	if (document.form1.title.value == 'X')
+	{
+		alert("Plase select title");
+		document.form1.title.focus();
+		return false;
+	}		
+		
+	if (document.form1.fname.value == "")
+		{
+			alert("Please enter your first Name !");
+			document.form1.fname.focus();
+			return false;
+		}
+	if (document.form1.lname.value == "")
+		{
+			alert("Please enter your Last Name !");
+			document.form1.lname.focus();
+			return false;
+		}
+	if (document.form1.address_1.value == "")
+		{
+			alert("Please enter your address !");
+			document.form1.address_1.focus();
+			return false;
+		}
+	if (document.form1.city.value == "")
+		{
+			alert("Please enter your City Name !");
+			document.form1.city.focus();
+			return false;
+		}
+	if (document.form1.zip.value == "")
+		{
+			alert("Please enter your Zip code !");
+			document.form1.zip.focus();
+			return false;
+		}
+	if (document.form1.country.value == "X")
+		{
+			alert("Please select your Country Name !");
+			document.form1.country.focus();
+			return false;
+		}
+	if (document.form1.subt.value == "")
+		{
+			alert("Please select your subscription type");
+			document.form1.subt.focus();
+			return false;
+		}
+	return chkForm()		
+		
+}
+function check_email(e)
+ {
+	ok = "1234567890qwertyuiop[]asdfghjklzxcvbnm.@-_QWERTYUIOPASDFGHJKLZXCVBNM";
+	for(i=0; i < e.length ;i++)
+	{
+		if(ok.indexOf(e.charAt(i))<0)
+			{ return (false);}	
+	} 
+
+	re = /(@.*@)|(\.\.)|(^\.)|(^@)|(@$)|(\.$)|(@\.)/;
+	re_two = /^.+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	if (!e.match(re) && e.match(re_two)) 
+	{
+		return (-1);		
+	} 
+}	
+
+function showsub()
+{
+	if (document.form1.subt.value != ''){
+	var sval = document.form1.subt.value;
+	var sval_arr = sval.split('|');
+	document.getElementById("subp").innerHTML =  "US $ " + sval_arr[0] + ' (For ' + sval_arr[1] + ' year)' ;}
+	else
+	{document.getElementById("subp").innerHTML ='';}
+}
+
+/*Till here*/
+
+function ShowContent(divId,ajaxIndex,url)
+{
+	var obj_tpe 
+	obj_tpe=	document.getElementById(divId).tagName 
+	obj_tpe = obj_tpe.toLowerCase();
+	//alert(obj_type)
+	if (obj_tpe == 'div'){
+		document.getElementById(divId).style.zindex= 1;
+		document.getElementById(divId).innerHTML = AjaxObjects[ajaxIndex].response;}
+	else{document.getElementById(divId).value=AjaxObjects[ajaxIndex].response;
+	}
+	if(enableCache){
+		jsCache[url] = 	AjaxObjects[ajaxIndex].response;
+	}
+	AjaxObjects[ajaxIndex] = false;
+}
+
+function Ajax(divId,url)
+{
+	if(enableCache && jsCache[url]){
+		document.getElementById(divId).innerHTML = jsCache[url];
+		return;
+	}	
+	var ajaxIndex = AjaxObjects.length;
+	AjaxObjects[ajaxIndex] = new sack();
+	AjaxObjects[ajaxIndex].requestFile = url;
+	var obj_tpe 
+	obj_tpe=	document.getElementById(divId).tagName 
+	obj_tpe = obj_tpe.toLowerCase();
+	//alert(obj_type)
+	if (obj_tpe == 'div')
+		{document.getElementById(divId).innerHTML ="<img src='https://www.medknow.com/images/loading.gif'><br>Please wait...";}
+	else
+		{document.getElementById(divId).value ="Please wait...";}
+	AjaxObjects[ajaxIndex].onCompletion = function(){ ShowContent(divId,ajaxIndex,url); };
+	AjaxObjects[ajaxIndex].runAJAX();
+}
+
+function fetchEntry(url)
+{
+	if(enableCache && jsCache[url]){
+		document.getElementById(divId).innerHTML = jsCache[url];
+		return;
+	}	
+	var ajaxIndex = AjaxObjects.length;
+	AjaxObjects[ajaxIndex] = new sack();
+	AjaxObjects[ajaxIndex].requestFile = url;
+	AjaxObjects[ajaxIndex].onCompletion = function(){ ShowEntry(ajaxIndex,url); };
+	AjaxObjects[ajaxIndex].runAJAX();
+}
+
+
+/* Simple AJAX Code-Kit (SACK) v1.6.1 */
+/* ©2005 Gregory Wild-Smith */
+/* www.twilightuniverse.com */
+/* Software licenced under a modified X11 licence,
+   see documentation or authors website for more details */
+
+function sack(file) {
+	this.xmlhttp = null;
+
+	this.resetData = function() {
+		this.method = "POST";
+  		this.queryStringSeparator = "?";
+		this.argumentSeparator = "&";
+		this.URLString = "";
+		this.encodeURIString = true;
+  		this.execute = false;
+  		this.element = null;
+		this.elementObj = null;
+		this.requestFile = file;
+
+		this.vars = new Object();
+		this.responseStatus = new Array(2);
+  	};
+
+	this.resetFunctions = function() {
+  		this.onLoading = function() { };
+  		this.onLoaded = function() { };
+  		this.onInteractive = function() { };
+  		this.onCompletion = function() { };
+  		this.onError = function() { };
+		this.onFail = function() { };
+	};
+
+	this.reset = function() {
+		this.resetFunctions();
+		this.resetData();
+	};
+
+	this.createAJAX = function() {
+		try {
+			this.xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e1) {
+			try {
+				this.xmlhttp = new ActiveXObject("Microsoft.XMLHTTP ");
+			} catch (e2) {
+				this.xmlhttp = null;
+			}
+		}
+
+		if (! this.xmlhttp) {
+			if (typeof XMLHttpRequest != "undefined") {
+				this.xmlhttp = new XMLHttpRequest();
+			} else {
+				this.failed = true;
+			}
+		}
+	};
+
+	this.setVar = function(name, value){
+		this.vars[name] = Array(value, false);
+	};
+
+	this.encVar = function(name, value, returnvars) {
+		if (true == returnvars) {
+			return Array(encodeURIComponent(name), encodeURIComponent(value));
+		} else {
+			this.vars[encodeURIComponent(name)] = Array(encodeURIComponent(value), true);
+		}
+	}
+
+	this.processURLString = function(string, encode) {
+
+		encoded = encodeURIComponent(this.argumentSeparator);
+		regexp = new RegExp(this.argumentSeparator + "|" + encoded);
+		varArray = string.split(regexp);
+		for (i = 0; i < varArray.length; i++){
+			urlVars = varArray[i].split("=");
+			if (true == encode){
+				this.encVar(urlVars[0], urlVars[1]);
+			} else {
+				this.setVar(urlVars[0], urlVars[1]);
+			}
+		}
+	}
+
+	this.createURLString = function(urlstring) {
+		if (this.encodeURIString && this.URLString.length) {
+			this.processURLString(this.URLString, true);
+		}
+
+		if (urlstring) {
+			if (this.URLString.length) {
+				this.URLString += this.argumentSeparator + urlstring;
+			} else {
+				this.URLString = urlstring;
+			}
+		}
+
+		// prevents caching of URLString
+		this.setVar("rndval", new Date().getTime());
+
+		urlstringtemp = new Array();
+		for (key in this.vars) {
+			if (false == this.vars[key][1] && true == this.encodeURIString) {
+				encoded = this.encVar(key, this.vars[key][0], true);
+				delete this.vars[key];
+				this.vars[encoded[0]] = Array(encoded[1], true);
+				key = encoded[0];
+			}
+
+			urlstringtemp[urlstringtemp.length] = key + "=" + this.vars[key][0];
+		}
+		if (urlstring){
+			this.URLString += this.argumentSeparator + urlstringtemp.join(this.argumentSeparator);
+		} else {
+			this.URLString += urlstringtemp.join(this.argumentSeparator);
+		}
+	}
+
+	this.runResponse = function() {
+		eval(this.response);
+	}
+
+	this.runAJAX = function(urlstring) {
+		
+		if (this.failed) {
+			this.onFail();
+		} else {
+			this.createURLString(urlstring);
+			if (this.element) {
+				this.elementObj = document.getElementById(this.element);
+			}
+
+			if (this.xmlhttp) {
+				var self = this;
+				if (this.method == "GET") {
+					totalurlstring = this.requestFile + this.queryStringSeparator + this.URLString;
+
+					this.xmlhttp.open(this.method, totalurlstring, true);
+				} else {
+
+					this.xmlhttp.open(this.method, this.requestFile, true);
+						
+					try {
+						//this.xmlhttp.setRequestHeader("Charset", "iso-8859-1")
+						this.xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+							//alert('a');
+						
+					} catch (e) { }
+				}
+
+				this.xmlhttp.onreadystatechange = function() {
+					switch (self.xmlhttp.readyState) {
+						case 1:
+							self.onLoading();
+							break;
+						case 2:
+							self.onLoaded();
+							break;
+						case 3:
+							self.onInteractive();
+							break;
+						case 4:
+							self.response = self.xmlhttp.responseText;
+							self.responseXML = self.xmlhttp.responseXML;
+							self.responseStatus[0] = self.xmlhttp.status;
+							self.responseStatus[1] = self.xmlhttp.statusText;
+
+							if (self.execute) {
+								self.runResponse();
+							}
+
+							if (self.elementObj) {
+								elemNodeName = self.elementObj.nodeName;
+								elemNodeName.toLowerCase();
+								alert(elemNodeName)
+								if (elemNodeName == "input"
+								|| elemNodeName == "select"
+								|| elemNodeName == "option"
+								|| elemNodeName == "textarea") {
+									self.elementObj.value = self.response;
+								} else {
+									self.elementObj.innerHTML = self.response;
+								}
+							}
+							if (self.responseStatus[0] == "200") {
+								self.onCompletion();
+								
+							} else {
+								self.onError();
+							}
+
+							self.URLString = "";
+							break;
+					}
+				};
+
+				this.xmlhttp.send(this.URLString);
+			}
+		}
+	};
+
+	this.reset();
+	this.createAJAX();
+}
+
+
+var cX = 0; var cY = 0; var rX = 0; var rY = 0;
+function UpdateCursorPosition(e){ cX = e.pageX; cY = e.pageY;}
+function UpdateCursorPositionDocAll(e){ cX = event.clientX; cY = event.clientY;}
+if(document.all) { document.onmousemove = UpdateCursorPositionDocAll; }
+else { document.onmousemove = UpdateCursorPosition; }
+function AssignPosition(d) {
+if(self.pageYOffset) {
+	rX = self.pageXOffset;
+	rY = self.pageYOffset;
+	}
+else if(document.documentElement && document.documentElement.scrollTop) {
+	rX = document.documentElement.scrollLeft;
+	rY = document.documentElement.scrollTop;
+	}
+else if(document.body) {
+	rX = document.body.scrollLeft;
+	rY = document.body.scrollTop;
+	}
+if(document.all) {
+	cX += rX; 
+	cY += rY;
+	}
+d.style.left = (100) + "px";
+d.style.top = (cY+10) + "px";
+//alert(d.style.left)
+//alert(d.style.top)
+}
+
+
+function omovimg(sc)
+{
+	dd1='dimg';
+
+	ShowContentEx(dd1);
+	Ajax(dd1, sc);
+}
+function omotimg()
+{
+	d='dimg';
+
+	document.getElementById(d).style.display = "none";
+}
+function ShowContentEx(d) 
+{
+
+	var dd = document.getElementById(d);
+	AssignPosition(dd);
+	dd.style.display = "block";
+
+}
+
+document.write ('<style>.dsod{float:left;width:100%;margin:0;border-left:none;border-top:none;border-bottom:none;}.dsad{padding-left:1%;font-family:arial,verdana,geneva,helvetica,sans-serif;}.dsld{float:left;width:48%;margin:0;padding:1%;}.dsrd{float:left;border-left:1px dotted #D3D2D2;width:47%;margin:0;padding:1% 0 0 2%}.dsoi{color:#6A6A6A;font-size:11px;}.dsld ul{float:left;} .dsld ul li{line-height:20px;list-style-type:disc;color:#004080;}.dsld ul li a{font-size:13px;}.dsrd ul li a{font-size:13px;}.dsrd ul{float:left;}.dsrd ul li{line-height:20px;list-style-type:disc;color:#004080;} h6{margin:0;font-family:arial,sans-serif;font-size:12px;}.rec{float:left;padding:1% 0 1% 0;width:100%;height:40px;font-size:14px;font-weight:bold;color:#525252;margin:0px;}.recLft{float:left;background-image:url("https://www.medknow.com/journals/images/hdrLft.png");background-repeat:no-repeat;width:0.8%;height:40px;}.recMd{float:left;background-image:url("https://www.medknow.com/journals/images/hdrMd.png");background-repeat:no-repeat;width:20%;height:40px;color:#fefefe;text-shadow:1px 1px 1px #363636;padding-top:11px;font-family:arial,sans-serif;}.recRt{float:left;background-color:#e1e3e3;width:79.2%;height:40px;background: -moz-linear-gradient(top, #dfe0de 0%, #f2f2f2 50%, #d7dee3 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dfe0de), color-stop(50%,#f2f2f2), color-stop(100%,#d7dee3));background: -webkit-linear-gradient(top, #dfe0de 0%,#f2f2f2 50%,#d7dee3 100%);background: -o-linear-gradient(top, #dfe0de 0%,#f2f2f2 50%,#d7dee3 100%);background: -ms-linear-gradient(top, #dfe0de 0%,#f2f2f2 50%,#d7dee3 100%);background: linear-gradient(to bottom, #dfe0de 0%,#f2f2f2 50%,#d7dee3 100%);}.innWpr{float:left;width:100%;border-top:none;border-bottom:10px solid transparent;border-style: solid; border-width: 15px; -moz-border-image: url("https://www.medknow.com/journals/images/border1.png") 27 repeat stretch; -webkit-border-image: url("https://www.medknow.com/journals/images/border1.png") 27 repeat stretch; -o-border-image: url("https://www.medknow.com/journals/images/border1.png") 27 repeat stretch; border-image: url("https://www.medknow.com/journals/images/border1.png") 27 fill repeat stretch;border-top:none;border-right:none;border-left:none;}</style>')
