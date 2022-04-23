@@ -1,0 +1,16 @@
+.pkp_structure_main p {
+    text-align: justify;
+}
+.obj_article_details .item {
+    text-align: justify;
+    line-height: 25px;
+}
+.pkp_structure_head {
+    background-color: #fefff1;
+    border-bottom: 1px solid #ddd;
+}
+
+.pkp_navigation_primary_row {
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
